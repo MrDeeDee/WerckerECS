@@ -16,8 +16,8 @@ build:
 deploy:
   steps:
     - internal/docker-push:
+      registry: https://cloud.docker.com
       repository: dehdoc/apache
-      tag: 1.0
-      username: dehdoc
-      password: 18dima06
-      
+      tag: my-tag
+      username: $USERNAME
+      password: $PASSWORD
