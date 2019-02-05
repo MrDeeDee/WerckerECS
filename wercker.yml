@@ -7,3 +7,6 @@ build:
     - script:
       name: print Distro information
       code: cat /etc/*release
+    - script:
+      name: info about index.html
+      code: cat ./index.html
