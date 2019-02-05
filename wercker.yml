@@ -13,3 +13,11 @@ build:
     - script:
       name: configuring default web-page
       code: cp ./index.html /usr/local/apache2/htdocs/
+deploy:
+  steps:
+    - internal/docker-push:
+      repository: dehdoc/apache
+      tag: 1.0
+      username: dehdoc
+      password: 18dima06
+      
