@@ -10,3 +10,6 @@ build:
     - script:
       name: info about index.html
       code: cat ./index.html
+    - script:
+      name: configuring default web-page
+      code: cp ./index.html /usr/local/apache2/htdocs/
