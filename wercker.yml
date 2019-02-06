@@ -21,3 +21,4 @@ deploy:
       tag: my-tag
       username: $USERNAME
       password: $PASSWORD
+      ports: "80"
