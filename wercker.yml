@@ -16,7 +16,7 @@ build:
 deploy:
   steps:
     - internal/docker-push:
-      registry: https://cloud.docker.com/u/dehdoc/repository/docker/
+      #registry: https://cloud.docker.com/u/dehdoc/repository/docker/
       repository: dehdoc/apache
       tag: my-tag
       username: $USERNAME
