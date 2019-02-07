@@ -11,8 +11,11 @@ build:
       name: info about index.html
       code: cat ./index.html
     - script:
+      name: info about page.html
+      code: cat ./page.html
+    - script:
       name: configuring default web-page
-      code: cp ./index.html /usr/local/apache2/htdocs/
+      code: cp ./page.html /usr/local/apache2/htdocs/
 deploy:
   steps:
     - internal/docker-push:
