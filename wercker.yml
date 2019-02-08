@@ -25,3 +25,4 @@ deploy:
       username: $USERNAME
       password: $PASSWORD
       ports: "80"
+      entrypoint: httpd-foreground
