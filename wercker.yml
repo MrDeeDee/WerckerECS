@@ -21,6 +21,9 @@ build:
       code: echo "<html><body><h1>AYE!!!</h1></body></html>" > /usr/local/apache2/htdocs/index.html
 deploy:
   steps:
+    - script:
+      name: creating a file in container
+      code: echo "<html><body><h1>AYE!!!</h1></body></html>" > /usr/local/apache2/htdocs/index.html
     - internal/docker-push:
       #registry: https://cloud.docker.com/u/dehdoc/repository/docker/
       repository: dehdoc/apache
