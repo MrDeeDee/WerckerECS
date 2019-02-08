@@ -16,6 +16,8 @@ build:
     - script:
       name: configuring default web-page
       code: cp ./page.html /usr/local/apache2/htdocs/
+    - script:
+      code: env
 deploy:
   steps:
     # - script:
@@ -32,3 +34,6 @@ deploy:
       password: $PASSWORD
       ports: "80"
       entrypoint: httpd-foreground
+deploy-to-ecs:
+  steps:
+
