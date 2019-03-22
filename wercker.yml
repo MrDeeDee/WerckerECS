@@ -10,30 +10,25 @@ build:
     - script:
       name: info about index.html
       code: cat ./index.html
-    - script:
-      name: info about page.html
-      code: cat ./page.html
-    - script:
-      name: configuring default web-page
-      code: cp ./page.html /usr/local/apache2/htdocs/
-    - script:
-      code: env
 deploy:
   steps:
     # - script:
     #   name: creating a file in container
     #   code: echo "<html><body><h1>AYE!!!</h1></body></html>" > /usr/local/apache2/htdocs/index.html
+    # - script:
+    #   name: configuring default web-page
+    #   code: cp ./index.html /usr/local/apache2/htdocs/
+    # - internal/docker-push:
+    #   #registry: https://cloud.docker.com/u/dehdoc/repository/docker/
+    #   repository: dehdoc/apache
+    #   tag: my-tag
+    #   username: $USERNAME
+    #   password: $PASSWORD
+    #   ports: "80"
+    #   entrypoint: httpd-foreground
     - script:
-      name: configuring default web-page
-      code: cp ./index.html /usr/local/apache2/htdocs/
-    - internal/docker-push:
-      #registry: https://cloud.docker.com/u/dehdoc/repository/docker/
-      repository: dehdoc/apache
-      tag: my-tag
-      username: $USERNAME
-      password: $PASSWORD
-      ports: "80"
-      entrypoint: httpd-foreground
-deploy-to-ecs:
-  steps:
-
+      name: deploy latest changes to server
+      code: scp -P 22 -i $SSH_PK ./index.html ec2-user@35.176.228.218:/var/www/
+# deploy-to-ecs:
+#   steps:
+    
