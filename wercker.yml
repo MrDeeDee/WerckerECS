@@ -28,7 +28,15 @@ deploy:
     #   entrypoint: httpd-foreground
     - script:
       name: deploy latest changes to server
-      code: scp -P 22 -i $SSH_PK ./index.html ec2-user@35.176.228.218:/var/www/
+      # code: scp -P 22 -i $SSH_PK ./index.html ec2-user@35.176.228.218:/var/www/
+      scp-deploy:
+        host: 35.176.228.218
+        sshport: 22
+        sshprivatekey: $SSH_PK
+        user: ec2-user
+        source: ./index.html #"${WERCKER_OUTPUT_DIR}/public"
+        destination: "/var/www"
+        hide-ssh-cnx-info-from-log: false
 # deploy-to-ecs:
 #   steps:
     
