@@ -11,14 +11,14 @@ build:
     #   name: info about index.html
     #   code: cat ./index.html
     - shellcheck:
-    files: run.sh
+        files: run.sh
 publish:
   steps:
-  - install-packages:
-  packages: ca-certificates
+    - install-packages:
+      packages: ca-certificates
 
-  - internal/publish-step:
-  owner: MrDeeDee
+    - internal/publish-step:
+      owner: MrDeeDee
     # - script:
     #   name: creating a file in container
     #   code: echo "<html><body><h1>AYE!!!</h1></body></html>" > /usr/local/apache2/htdocs/index.html
