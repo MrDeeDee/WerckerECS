@@ -1,0 +1,31 @@
+name: scp-deploy
+version: 0.1.4-dev8
+description: Deploy your code to any server using scp
+keywords:
+  - scp
+  - ssh
+properties:
+  host:
+    type: string
+    required: true
+  sshport:
+    type: string
+    default: 22
+    required: false
+  sshprivatekey:
+    type: string
+    required: true
+  user:
+    type: string
+    required: true
+  source:
+    type: string
+    default: ${WERCKER_OUTPUT_DIR}
+    required: false  
+  destination:
+    type: string
+    required: true
+  hide-ssh-cnx-info-from-log:
+    type: string
+    default: true
+    required: false
