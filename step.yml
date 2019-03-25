@@ -12,20 +12,20 @@ properties:
     type: string
     default: 22
     required: false
-  sshprivatekey:
+  - name: sshprivatekey
     type: string
     required: true
-  user:
+  - name: user
     type: string
     required: true
-  source:
+  - name: source
     type: string
     default: ${WERCKER_OUTPUT_DIR}
     required: false  
-  destination:
+  - name: destination
     type: string
     required: true
-  hide-ssh-cnx-info-from-log:
+  - name: hide-ssh-cnx-info-from-log
     type: string
     default: true
     required: false
