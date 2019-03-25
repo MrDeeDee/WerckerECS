@@ -1,5 +1,5 @@
 name: scp-deploy
-version: 0.1.4-dev8
+version: 0.0.1
 description: Deploy your code to any server using scp
 keywords:
   - scp
