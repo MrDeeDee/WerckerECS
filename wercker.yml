@@ -1,4 +1,4 @@
-box: centos:latest
+box: debian:latest
   # id: httpd:2.4
   # ports:
   #   - "80"
