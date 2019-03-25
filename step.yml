@@ -1,7 +1,7 @@
 name: scp-deploy
 version: 0.0.1
-description: Deploy your code to any server using scp
-keywords:
+summary: Deploy your code to any server using scp
+tags:
   - scp
   - ssh
 properties:
