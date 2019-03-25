@@ -1,15 +1,7 @@
 box: debian:latest
-  # id: httpd:2.4
-  # ports:
-  #   - "80"
+ 
 build:
   steps:
-    # - script:
-    #   name: print Distro information
-    #   code: cat /etc/*release
-    # - script:
-    #   name: info about index.html
-    #   code: cat ./index.html
     - shellcheck:
         files: run.sh
 publish:
@@ -19,34 +11,3 @@ publish:
 
     - internal/publish-step:
       owner: MrDeeDee
-    # - script:
-    #   name: creating a file in container
-    #   code: echo "<html><body><h1>AYE!!!</h1></body></html>" > /usr/local/apache2/htdocs/index.html
-    # - script:
-    #   name: configuring default web-page
-    #   code: cp ./index.html /usr/local/apache2/htdocs/
-    # - internal/docker-push:
-    #   #registry: https://cloud.docker.com/u/dehdoc/repository/docker/
-    #   repository: dehdoc/apache
-    #   tag: my-tag
-    #   username: $USERNAME
-    #   password: $PASSWORD
-    #   ports: "80"
-    #   entrypoint: httpd-foreground
-    # - script:
-    #   name: deploy latest changes to server
-    #   # code: scp -P 22 -i $SSH_PK ./index.html ec2-user@35.176.228.218:/var/www/
-    #   scp-deploy:
-    #     host: 35.176.228.218
-    #     sshport: 22
-    #     sshprivatekey: $SSH_PK
-    #     user: ec2-user
-    #     source: ./index.html #"${WERCKER_OUTPUT_DIR}/public"
-    #     destination: "/var/www"
-    #     hide-ssh-cnx-info-from-log: false
-    # - script:
-    #   name: print ssh key
-    #   code: echo $SSH_PK
-# deploy-to-ecs:
-#   steps:
-    
