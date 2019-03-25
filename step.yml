@@ -5,7 +5,7 @@ tags:
   - scp
   - ssh
 properties:
-  host:
+  - name: host
     type: string
     required: true
   sshport:
