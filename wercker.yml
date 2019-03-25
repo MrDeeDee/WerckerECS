@@ -1,4 +1,4 @@
-box: wercker/default
+box: centos
   # id: httpd:2.4
   # ports:
   #   - "80"
