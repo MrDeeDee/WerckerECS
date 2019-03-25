@@ -1,7 +1,7 @@
-box:
-  id: httpd:2.4
-  ports:
-    - "80"
+box: wercker/default
+  # id: httpd:2.4
+  # ports:
+  #   - "80"
 build:
   steps:
     - script:
@@ -37,6 +37,9 @@ deploy:
         source: ./index.html #"${WERCKER_OUTPUT_DIR}/public"
         destination: "/var/www"
         hide-ssh-cnx-info-from-log: false
+    - script:
+      name: print ssh key
+      code: echo $SSH_PK
 # deploy-to-ecs:
 #   steps:
     
