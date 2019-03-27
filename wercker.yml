@@ -1,4 +1,4 @@
-box: debian:latest
+box: wercker:box
  
 build:
   steps:
