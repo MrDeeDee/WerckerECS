@@ -7,7 +7,7 @@ build:
 publish:
   steps:
     - install-packages:
-      packages: ca-certificates scp
+      packages: scp ca-certificates 
 
     - internal/publish-step:
       owner: MrDeeDee
