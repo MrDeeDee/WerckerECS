@@ -7,7 +7,7 @@ build:
 publish:
   steps:
     - install-packages:
-      packages: ca-certificates git  
+      packages: ca-certificates openssh-client 
 
     - internal/publish-step:
       owner: MrDeeDee
