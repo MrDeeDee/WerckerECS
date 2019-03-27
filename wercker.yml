@@ -1,4 +1,4 @@
-box: wercker:box
+box: debian:latest
  
 build:
   steps:
@@ -7,7 +7,7 @@ build:
 publish:
   steps:
     - install-packages:
-      packages: ca-certificates
+      packages: ca-certificates scp
 
     - internal/publish-step:
       owner: MrDeeDee

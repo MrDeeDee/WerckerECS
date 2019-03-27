@@ -1,5 +1,5 @@
 name: scp-deploy
-version: 0.0.1
+version: 0.0.2
 summary: Deploy your code to any server using scp
 tags:
   - scp
