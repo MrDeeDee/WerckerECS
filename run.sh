@@ -44,10 +44,14 @@ then
     info $CMD_
 fi
 
-mkdir $HOME/.ssh
-ssh-keyscan -H $WERCKER_SCP_DEPLOY_HOST >> $HOME/.ssh/known_host
+if [ ! -d $HOME/.ssh ]
+then
+    mkdir $HOME/.ssh
+fi
 
-scp -r -P $WERCKER_SCP_DEPLOY_SSHPORT -i $WERCKER_SCP_DEPLOY_SSHPRIVATEKEY $WERCKER_SCP_DEPLOY_SOURCE $WERCKER_SCP_DEPLOY_USER@$WERCKER_SCP_DEPLOY_HOST:$WERCKER_SCP_DEPLOY_DESTINATION
+ssh-keyscan -H $WERCKER_SCP_DEPLOY_HOST >> $HOME/.ssh/known_host
+echo $WERCKER_SCP_DEPLOY_SSHPRIVATEKEY >> $HOME/.ssh/id_rsa
+scp -r -P $WERCKER_SCP_DEPLOY_SSHPORT -i $HOME/.ssh/id_rsa $WERCKER_SCP_DEPLOY_SOURCE $WERCKER_SCP_DEPLOY_USER@$WERCKER_SCP_DEPLOY_HOST:$WERCKER_SCP_DEPLOY_DESTINATION
 
 if [[ $? -ne 0 ]]; then
     fail "something went wrong :/ \n $CMD_";
